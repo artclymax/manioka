@@ -1,0 +1,87 @@
+@use "../tools" as *;
+
+.home-hero {
+	position: relative;
+	z-index: 1;
+	background: var(--color-dark);
+	color: var(--color-light);
+	padding-top: adapt(200, 140);
+	padding-bottom: adapt(80, 20);
+
+	&__container {
+		@include flex-column;
+		gap: adapt(100, 40);
+	}
+
+	&__content {
+		max-width: 1024px;
+	}
+
+	&__top-label {
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 10px 20px;
+		flex-wrap: wrap;
+	}
+
+	&__btn {
+	}
+
+	&__btn--primary {
+	}
+
+	&__btn--secondary {
+	}
+
+	&__cities {
+		@include reset-list;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: adapt(16, 6);
+	}
+
+	&__city {
+		display: flex;
+		align-items: center;
+		gap: adapt(16, 6);
+		font-size: adapt(40, 16);
+		font-family: var(--font-family-second);
+
+		&:not(:last-child) {
+			&::after {
+				content: "";
+				@include square(adapt(6, 3));
+				border-radius: 50%;
+				background: var(--color-light);
+			}
+		}
+	}
+
+	&__bg {
+		@include image-abs;
+		z-index: -1;
+		@include media($mobile) {
+			@include overlay(var(--color-black), 0.1);
+		}
+	}
+}

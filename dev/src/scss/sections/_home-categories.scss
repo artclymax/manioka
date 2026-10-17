@@ -1,0 +1,95 @@
+@use "../tools" as *;
+
+.home-categories {
+	&__container {
+	}
+
+	&__header {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 40px;
+	}
+
+	&__header-content {
+		max-width: 692px;
+	}
+
+	&__top-label {
+		color: var(--color-accent-decor);
+		@include mb(adapt(40, 20));
+	}
+
+	&__title {
+		@include mb(adapt(20, 10));
+	}
+
+	&__descr {
+	}
+
+	&__btn {
+	}
+
+	&__grid {
+		gap: adapt(40, 10) 20px;
+	}
+
+	&__card {
+	}
+}
+.home-categories-card {
+	@include reset-link;
+	@include flex-column;
+	gap: 20px;
+
+	@include hover {
+		img {
+			transform: scale(1.1);
+		}
+
+		.home-categories-card__title {
+			color: var(--color-accent);
+		}
+		.home-categories-card__content::after {
+			transform: translateX(6px);
+		}
+	}
+
+	&__image {
+		height: 206px;
+		overflow: hidden;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+		img {
+			transition: all 0.3s ease-in-out;
+		}
+	}
+
+	&__content {
+		//display: grid;
+		//grid-template-columns: 1fr 40px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: adapt(20, 10);
+		flex: 1;
+
+		&::after {
+			content: "";
+			@include square(40px);
+			@include bgimg(url("../../../public/images/icons/arrow-next.svg"));
+			align-self: end;
+			flex-shrink: 0;
+			transition: all 0.3s ease-in-out;
+		}
+	}
+
+	&__title {
+		flex: 1 1 100%;
+		transition: all 0.3s ease-in-out;
+	}
+
+	&__descr {
+		flex: 0 1 80%;
+	}
+}

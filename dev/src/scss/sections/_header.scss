@@ -1,0 +1,180 @@
+@use "../tools" as *;
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 55;
+	background: var(--color-light);
+	padding-block: 5px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+
+	@include media($tablet) {
+		padding-block: 10px;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		pointer-events: none;
+		background: var(--color-light);
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+		opacity: 0;
+		transition: all 0.3s;
+
+		.open-header-menu & {
+			opacity: 1;
+		}
+	}
+
+	& ~ main {
+		margin-top: var(--header-height);
+	}
+
+	.admin-bar & {
+		top: var(--wp-admin--admin-bar--height);
+
+		& ~ main {
+			//margin-top: calc(var(--header-height) + var(--wp-admin--admin-bar--height));
+		}
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+
+		@include media($tablet) {
+			gap: 10px;
+		}
+	}
+
+	&__logo {
+		flex-shrink: 0;
+		position: relative;
+		z-index: 3;
+		@include media($tablet) {
+			margin-right: auto;
+		}
+	}
+
+	&__menu {
+	}
+
+	&__phone {
+		position: relative;
+		z-index: 3;
+		@include square(44px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--color-accent);
+	}
+
+	&__burger-btn {
+		position: relative;
+		z-index: 3;
+	}
+}
+
+.header-menu {
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+
+		@include media($tablet) {
+			flex-direction: column;
+			gap: 40px;
+			align-items: inherit;
+			width: 100%;
+		}
+	}
+	&__main-menu {
+	}
+
+	&__phone {
+	}
+
+	&__contacts-box {
+		@include flex-column;
+		gap: 20px;
+		@include text-body-s;
+		align-items: center;
+	}
+
+	&__btn {
+	}
+
+	&__socials {
+		@include flex-column;
+		gap: 20px;
+		align-items: center;
+	}
+
+	&__cities {
+		@include reset-list;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: adapt(16, 6);
+	}
+
+	&__city {
+		display: flex;
+		align-items: center;
+		gap: adapt(16, 6);
+
+		&:not(:last-child) {
+			&::after {
+				content: "";
+				@include square(adapt(6, 3));
+				border-radius: 50%;
+				background: var(--color-text);
+			}
+		}
+	}
+}
+.header-phone {
+	@include flex-column;
+	gap: 10px;
+	align-items: center;
+
+	&__number {
+		@include reset-link;
+		--width: 30px;
+		gap: 20px;
+	}
+
+	&__value {
+		font-size: 32px;
+	}
+
+	&__meta {
+		@include text-body-s;
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	&__operators {
+	}
+
+	&__badge {
+		padding: 2px 4px;
+		border: 1px solid var(--color-accent);
+	}
+}
+
+.socials-box {
+	&__title {
+		@include reset;
+	}
+}

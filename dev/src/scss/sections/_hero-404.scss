@@ -1,0 +1,53 @@
+@use "../tools" as *;
+
+.page-404 {
+	position: relative;
+	z-index: 1;
+	color: var(--color-light);
+	background: var(--color-dark);
+	padding-top: calc(var(--header-height) + 20px);
+	min-height: calc(100dvh - (var(--header-height) + 20px));
+
+	&__container {
+	}
+
+	&__content {
+		@include flex-column;
+		gap: adapt(20, 10);
+		max-width: 570px;
+	}
+
+	&__number {
+		font-weight: 500;
+		font-size: adapt(300, 150);
+		letter-spacing: -0.02em;
+		-webkit-text-stroke: 3px var(--color-accent);
+		color: var(--color-0);
+		line-height: 1;
+		margin-bottom: calc(adapt(20, 10) * -1);
+	}
+
+	&__title {
+		color: var(--color-white);
+	}
+
+	&__descr {
+	}
+
+	&__btn-box {
+	}
+
+	&__btn {
+	}
+
+	&__image {
+		@include image-abs;
+		z-index: -1;
+
+		@include media($mobile) {
+			--object-pos: top 50%;
+
+			@include overlay(var(--color-dark), 0.5);
+		}
+	}
+}

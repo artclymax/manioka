@@ -1,0 +1,64 @@
+@use "../tools" as *;
+
+.product-card {
+	@include flex-column;
+	gap: 20px;
+	@include hover {
+		img {
+			transform: scale(1.1);
+		}
+		.product-card__title {
+			color: var(--color-accent);
+		}
+	}
+	&__image {
+		display: flex;
+		height: 206px;
+		overflow: hidden;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+
+		img {
+			transition: all 0.3s ease-in-out;
+		}
+	}
+
+	&__content {
+		@include flex-column;
+		gap: 20px;
+		padding-inline: 10px;
+		flex-grow: 1;
+		@include media($mobile) {
+			padding: unset;
+		}
+	}
+
+	&__title {
+		a {
+			@include reset-link;
+		}
+	}
+
+	&__attributes {
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__attribute {
+		display: grid;
+		grid-template-columns: 100px 1fr;
+		gap: 20px;
+	}
+
+	&__attribute-key {
+		@include reset;
+	}
+
+	&__attribute-value {
+		@include reset;
+	}
+
+	&__link {
+		max-width: 100%;
+		margin-top: auto;
+	}
+}

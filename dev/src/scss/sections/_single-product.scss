@@ -1,0 +1,94 @@
+@use "../tools" as *;
+
+.product-single {
+	padding-top: adapt(80, 20);
+
+	&__container {
+		@include flex-column;
+		gap: adapt(60, 40);
+	}
+
+	&__breadcrumbs {
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__gallery {
+		display: grid;
+		gap: 20px;
+	}
+
+	&__swiper-main {
+		width: 100%;
+	}
+
+	&__main-image {
+		display: flex;
+		height: adapt(547, 334);
+	}
+
+	&__swiper-thumbs {
+		width: 100%;
+	}
+
+	&__thumb {
+		display: flex;
+		height: adapt(154, 100);
+		cursor: pointer;
+	}
+
+	&__single-image {
+		display: flex;
+		height: adapt(547, 334);
+	}
+
+	&__info {
+		@include flex-column;
+	}
+
+	&__categories {
+		@include mb(25px);
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+
+	&__category {
+		@include hover-link(var(--color-accent)) {
+			color: var(--color-accent-decor);
+		}
+	}
+
+	&__title {
+		@include mb(adapt(20, 10));
+	}
+
+	&__content {
+		@include mb(20px);
+	}
+
+	&__attributes {
+		@include mb(adapt(34, 20));
+	}
+
+	&__attribute {
+		grid-template-columns: 130px 1fr;
+	}
+
+	&__attribute-key {
+	}
+
+	&__attribute-value {
+	}
+
+	&__price-note {
+	}
+}

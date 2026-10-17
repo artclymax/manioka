@@ -1,0 +1,42 @@
+@use "../tools" as *;
+
+.services-process {
+	background: var(--color-accent-section);
+	color: var(--color-light);
+
+	&__container {
+		display: grid;
+		gap: 40px adapt(103, 20, $tablet);
+		grid-template-columns: 0.9fr 1fr;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__info {
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: adapt(26, 20, $tablet);
+	}
+
+	&__step {
+		.hints-step {
+			&__number {
+				color: var(--color-accent-decor);
+			}
+
+			&__content {
+			}
+
+			&__title {
+			}
+
+			&__descr {
+			}
+		}
+	}
+}

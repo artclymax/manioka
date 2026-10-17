@@ -1,0 +1,169 @@
+@use "../tools" as *;
+
+.process {
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: start;
+		gap: 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__left {
+		@include media($mobile) {
+			order: 2;
+			margin-inline: -10px;
+		}
+	}
+
+	&__right {
+	}
+}
+
+.process-left {
+	padding: 40px 12px;
+	background: var(--color-accent-section);
+	color: var(--color-light);
+	@include flex-column;
+	gap: adapt(40, 20);
+
+	&__content {
+		padding-bottom: adapt(40, 20);
+		position: relative;
+
+		&::after {
+			content: " ";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 80px;
+			height: 1px;
+			background: var(--color-accent-decor);
+		}
+	}
+
+	&__label {
+		color: var(--color-accent-decor);
+		@include mb(adapt(40, 20));
+	}
+
+	&__title {
+		text-wrap: balance;
+		@include mb(adapt(20, 10));
+	}
+
+	&__descr {
+	}
+
+	&__bottom {
+	}
+
+	&__feature {
+		@include mb(adapt(30, 20));
+	}
+
+	&__subtitle {
+		color: var(--color-accent-decor);
+		@include mb(adapt(20, 10));
+	}
+
+	&__feature-descr {
+	}
+
+	&__btn {
+		max-width: 100%;
+		width: 100%;
+		@include mb(adapt(40, 20));
+	}
+
+	&__phone {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
+		position: relative;
+
+		&::before,
+		&::after {
+			content: "";
+			//position: absolute;
+			//top: 50%;
+			//left: -20px;
+			width: adapt(80, 34);
+			height: 1px;
+			background: var(--color-accent-decor);
+			//transform: translateY(-50%) translateX(100%);
+		}
+		&::after {
+			//left: auto;
+			//right: -20px;
+			////transform: translateY(-50%) translateX(-100%);
+		}
+		@include media($mobile) {
+			@include text-body-l-mob;
+		}
+	}
+
+	&__phone-label {
+	}
+
+	&__phone-value {
+		font-weight: 700;
+
+		.link {
+			@include hover-link(currentColor);
+		}
+	}
+}
+
+.process-right {
+	&__title {
+	}
+
+	&__grid {
+		gap: 30px 20px;
+		--min: 200px;
+	}
+
+	&__step {
+	}
+}
+
+.process-step {
+	@include flex-column;
+	gap: 20px;
+
+	&__number {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+
+		@include media($mobile) {
+			gap: 0;
+		}
+
+		&::after {
+			content: "";
+			width: 64px;
+			height: 1px;
+			background: var(--color-accent-decor);
+
+			@include media($mobile) {
+				flex: 1;
+			}
+		}
+	}
+
+	&__title {
+		@include media($mobile) {
+			@include mb(-10px);
+		}
+	}
+
+	&__descr {
+		font-size: adapt(16, 14);
+	}
+}

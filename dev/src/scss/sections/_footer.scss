@@ -1,0 +1,180 @@
+@use "../tools" as *;
+
+.footer {
+	background: var(--color-border);
+	padding-block: 20px;
+
+	&__container {
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__top {
+		padding-bottom: 20px;
+		border-bottom: 1px solid var(--color-accent);
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 40px adapt(60, 20, $tablet);
+
+		@include media($tablet) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include media($mobile-sm) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__brand {
+		@include flex-column;
+		gap: 20px;
+		@include media($tablet) {
+			grid-column: 1 / -1;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&__logo {
+		a {
+			height: adapt(242, 150);
+		}
+	}
+
+	&__descr {
+		text-wrap: balance;
+		@include media($mobile, min) {
+			font-size: 13px;
+			font-weight: 600;
+			max-width: 242px;
+			letter-spacing: 0.18em;
+		}
+
+		@include media($mobile) {
+			@include text-phone-label-mob;
+		}
+	}
+
+	&__nav {
+	}
+
+	&__catalog {
+	}
+
+	&__contacts {
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__phone {
+		@include flex-column;
+		gap: 10px;
+
+		@include media($mobile) {
+			display: grid;
+			grid-template-columns: 32px 1fr;
+
+			&::before {
+				content: "";
+				@include square(32px);
+				@include bgimg(url("../../../public/images/icons/phone.svg"));
+				grid-row: 1 / 3;
+				align-self: center;
+			}
+		}
+	}
+
+	&__phone-list {
+		@include flex-column;
+		align-items: start;
+	}
+
+	&__phone-link {
+		font-size: adapt(52, 28);
+		color: var(--color-accent) !important;
+		@include hover-link(var(--color-accent));
+	}
+
+	&__phone-value {
+	}
+
+	&__phone-meta {
+		@include text-body-s;
+		display: flex;
+		gap: 10px;
+		align-items: center;
+	}
+
+	&__operators {
+	}
+
+	&__badge {
+		padding: 2px 4px;
+		border: 1px solid var(--color-accent);
+	}
+
+	&__address {
+		text-wrap: balance;
+	}
+
+	&__socials {
+		@include media($mobile) {
+			justify-content: center;
+		}
+	}
+
+	&__bottom {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		align-items: center;
+		justify-content: space-between;
+		@include media($mobile, min) {
+			font-size: 13px;
+			font-weight: 600;
+			letter-spacing: 0.18em;
+		}
+
+		@include media($mobile) {
+			@include text-phone-label-mob;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+			align-items: center;
+		}
+	}
+
+	&__bottom-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		align-items: center;
+	}
+
+	&__bottom-link {
+		@include hover-link(var(--color-accent));
+	}
+
+	&__copy {
+	}
+}
+
+.footer-col {
+	@include flex-column;
+	gap: adapt(40, 20);
+
+	&__title {
+		color: var(--color-accent);
+	}
+}
+
+.footer-menu {
+	@include reset-list;
+	@include flex-column;
+	gap: 10px;
+
+	a {
+		@include hover-link(var(--color-accent));
+	}
+}

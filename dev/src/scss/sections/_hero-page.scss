@@ -1,0 +1,57 @@
+@use "../tools" as *;
+
+.hero-page {
+	border-bottom: 1px solid var(--color-accent-decor);
+
+	&__container {
+		--width: #{adapt(660, 360, $mobile, $laptop)};
+		--gap: #{adapt(56, 20, $mobile, $laptop)};
+		@include media($mobile) {
+			padding: unset;
+			--width: 100%;
+			gap: 40px;
+		}
+	}
+
+	&__wrapper {
+	}
+	&__content {
+		padding-top: adapt(80, 20);
+		padding-bottom: 64px;
+
+		@include media($mobile) {
+			padding-inline: var(--container-padding);
+			padding-bottom: unset;
+		}
+	}
+	&__breadcrumbs {
+		@include mb(adapt(40, 20));
+	}
+
+	&__label {
+		@include reset;
+		@include mb(adapt(40, 20));
+		color: var(--color-accent-decor);
+	}
+
+	&__title {
+		@include mb(adapt(20, 10));
+	}
+
+	&__descr {
+	}
+
+	&__image {
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+
+		@include media($mobile) {
+			flex: 0 0 255px;
+		}
+	}
+}
+
+.hero-page-service {
+	.hero-page__image {
+		min-height: adapt(601, 255, $mobile);
+	}
+}

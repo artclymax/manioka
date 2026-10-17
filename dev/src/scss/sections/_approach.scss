@@ -1,0 +1,22 @@
+@use "../tools" as *;
+
+.approach {
+	&__container {
+		display: grid;
+		gap: 40px adapt(58, 20, $tablet);
+		grid-template-columns: 1fr 1fr;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__step {
+	}
+}

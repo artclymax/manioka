@@ -1,0 +1,79 @@
+@use "../tools" as *;
+
+.monuments {
+	&__container {
+	}
+
+	&__header {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: adapt(40, 20) 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__top-label {
+		grid-column: 1 / -1;
+		color: var(--color-accent-decor);
+	}
+
+	&__header-content {
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+
+	&__btn {
+	}
+
+	&__image {
+		height: 385px;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+		@include media($mobile) {
+			margin-bottom: -20px;
+		}
+	}
+
+	&__grid {
+		--min: 240px;
+		gap: 20px adapt(80, 20, $mobile);
+	}
+
+	&__step {
+	}
+}
+
+.monuments-step {
+	@include flex-column;
+	gap: adapt(20, 10);
+
+	&__title {
+		box-sizing: content-box;
+		padding-top: adapt(36, 20);
+		position: relative;
+
+		@include media($tablet, min) {
+			min-height: 64px;
+		}
+
+		&::before {
+			content: " ";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 64px;
+			height: 1px;
+			background: var(--color-accent-decor);
+		}
+	}
+
+	&__descr {
+	}
+}

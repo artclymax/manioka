@@ -1,0 +1,23 @@
+@use "../tools" as *;
+
+.section-gap {
+	display: grid;
+	align-items: start;
+	gap: var(--section-gap);
+}
+
+.top-label {
+	color: var(--color-accent-decor);
+	@include mb(adapt(40, 20));
+}
+
+.section-header {
+	@include flex-column;
+	&__label {
+		color: var(--color-accent-decor);
+		@include mb(adapt(40, 20));
+	}
+	&__title {
+		@include mb(adapt(20, 10));
+	}
+}

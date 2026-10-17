@@ -1,0 +1,144 @@
+@use "../tools" as *;
+
+.contacts-faq {
+	padding-bottom: var(--section-padding);
+	
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__left {
+		@include flex-column;
+		gap: 40px;
+	}
+
+	&__content {
+		@include flex-column;
+		gap: 20px;
+		& > *:not(:last-child) {
+			padding-bottom: 20px;
+			border-bottom: 1px solid var(--color-accent);
+		}
+	}
+
+	&__phone {
+		--width: #{adapt(52, 32)};
+		gap: 20px;
+	}
+	&__phone-wrapper {
+		@include flex-column;
+		gap: 10px;
+	}
+	&__phone-list {
+		@include flex-column;
+		font-size: adapt(72, 42);
+	}
+
+	&__phone-link {
+		@include hover-link(var(--color-accent));
+	}
+	&__phone-meta {
+		@include text-body-s;
+		display: flex;
+		gap: 10px;
+		align-items: center;
+	}
+
+	&__operators {
+	}
+
+	&__badge {
+		padding: 2px 4px;
+		border: 1px solid var(--color-accent);
+	}
+
+	&__address {
+		@include media($mobile, min) {
+			@include title-3;
+		}
+		@include media($mobile) {
+			@include title-4;
+		}
+	}
+
+	&__right {
+		@include flex-column;
+		gap: adapt(40, 20);
+	}
+
+	&__faq-label {
+		color: var(--color-accent-decor);
+	}
+
+	&__faq-list {
+		@include flex-column;
+	}
+}
+.faq-item {
+	&:not(:last-child) {
+		border-bottom: 1px solid var(--color-accent);
+	}
+	&:first-child {
+		.faq-item__btn {
+			padding-top: 0;
+		}
+	}
+	&__btn {
+		@include reset-btn;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		padding-block: 20px;
+
+		@include hover {
+		}
+	}
+
+	&__title {
+	}
+
+	&__icon {
+		@include square(32px);
+		position: relative;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 20px;
+			height: 2px;
+			background: var(--color-accent);
+			transition: all 0.3s ease-in-out;
+		}
+		&::after {
+			transform: translate(-50%, -50%) rotate(90deg);
+		}
+
+		.spoiler-active & {
+			&::before {
+				transform: translate(-50%, -50%) rotate(180deg);
+			}
+			&::after {
+				transform: translate(-50%, -50%) rotate(180deg);
+				opacity: 0;
+			}
+		}
+	}
+
+	&__content {
+	}
+
+	&__descr {
+		padding-bottom: 20px;
+	}
+}

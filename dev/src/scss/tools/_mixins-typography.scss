@@ -1,0 +1,221 @@
+@use "functions" as *;
+@use "mixins" as *;
+@use "constants" as *;
+
+@mixin title-main {
+	@include reset;
+	font-family: var(--font-family-second);
+	font-weight: 400;
+	font-size: 96px;
+	line-height: 96%;
+}
+
+@mixin title-1 {
+	@include reset;
+	font-family: var(--font-family-second);
+	font-size: 64px;
+	font-weight: 400;
+	line-height: 100%;
+}
+
+@mixin title-2 {
+	@include reset;
+	font-family: var(--font-family-second);
+	font-size: 52px;
+	font-weight: 400;
+	line-height: 100%;
+}
+
+@mixin title-3 {
+	@include reset;
+	font-family: var(--font-family-second);
+	font-size: 36px;
+	font-weight: 400;
+	line-height: 120%;
+}
+
+@mixin title-4 {
+	@include reset;
+	font-family: var(--font-family-second);
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 120%;
+}
+
+@mixin text-number {
+	@include reset;
+	font-family: var(--font-family-second);
+	font-size: 72px;
+	font-weight: 400;
+	line-height: 120%;
+}
+
+@mixin text-body-l {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 150%;
+}
+
+@mixin text-body-m {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 156%;
+}
+
+@mixin text-body-s {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 150%;
+}
+
+@mixin text-menu {
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 133%;
+}
+
+@mixin text-btn {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 125%;
+}
+
+@mixin text-link {
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 140%;
+}
+
+@mixin text-number-mob {
+	font-weight: 500;
+	font-size: 30px;
+	line-height: 113%;
+}
+
+@mixin text-label {
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 142%;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+@mixin text-input {
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 123%;
+}
+
+// MOBILE
+@mixin title-main-mob {
+	@include reset;
+
+	font-family: var(--font-family-second);
+	font-weight: 400;
+	font-size: 46px;
+	line-height: 104%;
+	letter-spacing: -0.01em;
+}
+
+@mixin title-1-mob {
+	@include reset;
+
+	font-family: var(--font-family-second);
+	font-weight: 400;
+	font-size: 42px;
+	line-height: 105%;
+}
+
+@mixin title-2-mob {
+	@include reset;
+
+	font-family: var(--font-family-second);
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 108%;
+}
+
+@mixin title-3-mob {
+	@include reset;
+
+	font-family: var(--font-family-second);
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 114%;
+}
+
+@mixin title-4-mob {
+	@include reset;
+	font-family: var(--font-family-second);
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 117%;
+}
+
+@mixin text-body-l-mob {
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 156%;
+}
+
+@mixin text-body-m-mob {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 156%;
+}
+
+@mixin text-body-s-mob {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 150%;
+}
+
+@mixin text-btn-mob {
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 133%;
+}
+
+@mixin text-link-mob {
+	@include text-link;
+}
+
+@mixin text-caption-mob {
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 145%;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+@mixin text-phone-mob {
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 117%;
+}
+
+@mixin text-phone-label-mob {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 142%;
+	text-transform: uppercase;
+}
+
+@mixin text-label-mob {
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 142%;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+@mixin text-menu {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 138%;
+}
+
+@mixin text-input-mob {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+}

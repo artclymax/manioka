@@ -1,0 +1,64 @@
+@use "../tools" as *;
+
+.project-gallery {
+	&__container {
+	}
+
+	&__header {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+	.section-header {
+		max-width: 789px;
+	}
+	&__nav {
+	}
+
+	&__swiper {
+		width: 100%;
+	}
+
+	&__swiper--desktop {
+	}
+
+	&__slide-desktop {
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr 0.7fr;
+		gap: 5px 20px;
+		grid-template-rows: 190px 190px;
+	}
+
+	&__item {
+		display: flex;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+		@include media($mobile) {
+			height: 190px;
+		}
+		&:first-child {
+			grid-row: 1 / 3;
+		}
+	}
+
+	&__swiper--mobile {
+	}
+
+	&__slide {
+	}
+
+	&__nav-mobile {
+	}
+}
+
+.swiper-btn {
+	&__prev {
+	}
+
+	&__next {
+	}
+}

@@ -1,0 +1,121 @@
+@use "../tools" as *;
+@use "btn" as *;
+.cookie-banner {
+	--artcly-cc-btn-link-color: var(--color-primary);
+	@include reset;
+	padding-bottom: adapt(10, 0, $mobile);
+	background: var(--color-0);
+	box-shadow: none;
+}
+.cookie-banner-container {
+	border: 2px solid var(--color-accent);
+	background: var(--color-warm-bg);
+	padding: adapt(20, 10, $mobile);
+	display: flex;
+	max-width: 852px;
+	gap: adapt(40, 20, $mobile);
+
+	@include media($mobile) {
+		max-width: 100%;
+		flex-direction: column;
+		gap: 20px;
+	}
+}
+.cookie-banner-content {
+	@include flex-column;
+	gap: adapt(20, 10);
+}
+.cookie-banner-title {
+	font-weight: 400;
+	font-size: 16px;
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	margin-bottom: 0;
+	&::after {
+		content: "";
+		@include square(20px);
+		@include bgimg(url("../../../public/images/icons/cookie-icon.svg"));
+	}
+}
+.cookie-banner-description {
+	font-size: 16px;
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+	& > *:first-child {
+		margin-top: 0;
+	}
+	@include media($mobile) {
+		//@include text-body-s;
+	}
+
+	a {
+		color: var(--color-accent);
+		transition: all 0.3s ease-in-out;
+		text-decoration: none;
+		@include hover-link(var(--color-accent));
+	}
+}
+.cookie-actions {
+	width: 100%;
+	flex-shrink: 0;
+	justify-content: center;
+	margin: unset;
+	@include media($mobile, min) {
+		max-width: 300px;
+	}
+}
+.cookie-btn {
+}
+.cookie-btn-equal {
+	@include btn;
+	border-radius: 0;
+	min-width: 100%;
+}
+.cookie-btn-link {
+	padding: unset;
+}
+// MODALS
+.cookie-modal {
+	.cookie-btn-equal {
+		@include media($mobile, min) {
+			min-width: initial;
+			flex: 1;
+		}
+	}
+}
+
+.cookie-modal-dialog {
+	--artcly-cc-chk-bg-active: var(--color-accent);
+	--artcly-cc-chk-bg-active: var(--color-accent);
+	--artcly-cc-close-color: var(--color-accent);
+	--artcly-cc-chk-disabled-bg: var(--color-accent);
+	padding: adapt(20, 10, $mobile);
+	border: 2px solid var(--color-accent);
+	background: var(--color-warm-bg);
+	border-radius: 0;
+	overflow: auto;
+}
+.cookie-modal-dialog-close-btn {
+	top: 8px;
+	right: 10px;
+}
+.cookie-setting-row input:disabled ~ span::before {
+	opacity: 0.7;
+}
+.cookie-setting-row__icon {
+	@include square(20px);
+	border-radius: 0;
+
+	&::after {
+		top: 3px;
+		left: 7px;
+	}
+}
+.cookie-setting-row input:disabled ~ .cookie-setting-row__icon {
+	opacity: 0.7;
+}
+.artcly-iframe-msg a {
+	color: var(--color-white);
+}

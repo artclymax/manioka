@@ -1,0 +1,69 @@
+@use "../tools" as *;
+
+.upcase {
+	text-transform: uppercase;
+}
+.t-center {
+	text-align: center !important;
+}
+
+.title-main {
+	@include media($mobile, min) {
+		@include title-main;
+	}
+	@include media($mobile) {
+		@include title-3-mob;
+	}
+}
+.title-1 {
+	@include media($mobile, min) {
+		@include title-1;
+	}
+	@include media($mobile) {
+		@include title-3-mob;
+	}
+}
+.title-2 {
+	@include media($mobile, min) {
+		@include title-2;
+	}
+	@include media($mobile) {
+		@include title-3-mob;
+	}
+}
+.text-number {
+	@include media($mobile, min) {
+		@include text-number;
+	}
+	@include media($mobile) {
+		@include title-1-mob;
+	}
+}
+
+.title-3 {
+	@include media($mobile, min) {
+		@include title-3;
+	}
+	@include media($mobile) {
+		@include title-4-mob;
+	}
+}
+
+.title-4 {
+	@include media($mobile, min) {
+		@include title-4;
+	}
+
+	@include media($mobile) {
+		@include title-4-mob;
+	}
+}
+
+.label {
+	@include media($mobile, min) {
+		@include text-label;
+	}
+	@include media($mobile) {
+		@include text-phone-label-mob;
+	}
+}

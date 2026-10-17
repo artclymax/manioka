@@ -1,0 +1,15 @@
+@use "../tools" as *;
+
+.page-shop {
+	padding-top: var(--section-padding);
+
+	&__container {
+	}
+
+	&__grid {
+		gap: 20px;
+	}
+
+	&__card {
+	}
+}
