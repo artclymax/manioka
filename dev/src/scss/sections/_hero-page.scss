@@ -17,7 +17,7 @@
 	}
 	&__content {
 		padding-top: adapt(80, 20);
-		padding-bottom: 64px;
+		padding-bottom: var(--section-padding);
 
 		@include media($mobile) {
 			padding-inline: var(--container-padding);
@@ -53,5 +53,81 @@
 .hero-page-service {
 	.hero-page__image {
 		min-height: adapt(601, 255, $mobile);
+	}
+}
+
+.hero-page-hints {
+	border: none;
+	.hero-page {
+		&__container {
+			padding-block: adapt(80, 20);
+			@include media($mobile) {
+				padding-inline: var(--container-padding);
+			}
+		}
+
+		&__wrapper {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			align-items: end;
+
+			gap: 40px 20px;
+
+			@include media($tablet) {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		&__content {
+			padding: unset;
+		}
+
+		&__breadcrumbs {
+		}
+
+		&__label {
+		}
+
+		&__title {
+		}
+
+		&__featured {
+		}
+
+		&__featured-card {
+		}
+	}
+}
+.hero-featured-card {
+	@include reset-link;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+
+	@include media($mobile-sm) {
+		grid-template-columns: 1fr;
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+		@include media($mobile-sm) {
+			height: 250px;
+		}
+	}
+
+	&__content {
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+
+	&__link-text {
 	}
 }

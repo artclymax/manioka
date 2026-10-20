@@ -1,0 +1,38 @@
+@use "../tools" as *;
+
+.monuments-design {
+	&__container {
+	}
+
+	&__grid {
+		gap: 20px;
+	}
+
+	&__card {
+	}
+}
+.monuments-design-card {
+	display: grid;
+	gap: 20px;
+	grid-template-rows: 206px 1fr;
+	&__image {
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+	}
+
+	&__content {
+		@include flex-column;
+		gap: adapt(20, 10);
+	}
+
+	&__title {
+		margin-bottom: auto;
+
+		@include media($mobile) {
+			@include title-4-mob;
+		}
+	}
+
+	&__descr {
+		font-size: adapt(18, 14);
+	}
+}

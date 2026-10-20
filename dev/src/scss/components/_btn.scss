@@ -169,6 +169,14 @@
 			transform: translateX(6px);
 		}
 	}
+
+	&--light {
+		--url-icon: url("../../../public/images/icons/btn-arrow-light.svg");
+		color: var(--color-light);
+		&::before {
+			background: var(--color-light);
+		}
+	}
 }
 //.catalog-btn {
 //	--icon-bg: url("../../../public/images/icons/catalog-btn.svg");

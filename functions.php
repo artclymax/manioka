@@ -47,6 +47,9 @@ require_once get_template_directory() . '/functions/register_nav_menus.php';
 // Регистрация новых записей
 require_once get_template_directory() . '/functions/register_post_type.php';
 
+// Убираем записи
+require_once get_template_directory() . '/functions/delete_default_post.php';
+
 // Кастомная админка (новая версия)
 require_once get_template_directory() . '/functions/admin/admin-page.php';
 require_once get_template_directory() . '/functions/admin/plugin-installer.php';

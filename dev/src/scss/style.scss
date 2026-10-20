@@ -93,6 +93,14 @@
 @use "sections/_product-card.scss";
 @use "sections/_single-product.scss";
 
+// monuments
+@use "sections/_monuments-services.scss";
+@use "sections/_monuments-design.scss";
+@use "sections/_monuments-kit.scss";
+
+// hints
+@use "sections/_page-hints.scss";
+
 
 #wpadminbar {
 	position: fixed;

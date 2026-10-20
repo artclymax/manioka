@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			freeMode: true,
 			watchSlidesProgress: true,
 			breakpoints: {
-				768: { spaceBetween: 20,},
+				768: { spaceBetween: 20 },
 			},
 		});
 

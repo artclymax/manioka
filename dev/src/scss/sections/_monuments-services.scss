@@ -1,0 +1,67 @@
+@use "../tools" as *;
+@use "../components/btn" as *;
+
+.monuments-services {
+	&__container {
+	}
+
+	&__grid {
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+.monuments-card {
+	@include reset-link;
+	position: relative;
+	z-index: 1;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+	border: 1px solid var(--color-accent-decor);
+
+	&--with-image {
+	}
+	&--dark {
+	}
+	&__image {
+		@include image-abs;
+		z-index: -1;
+	}
+
+	&__content {
+		position: relative;
+		z-index: 2;
+		padding: adapt(72, 10, $finishBreakpoint, $tablet) adapt(20, 10, $finishBreakpoint, $tablet);
+		@include flex-column;
+		gap: 20px;
+
+		@include media($mobile) {
+			width: 100%;
+		}
+	}
+
+	&__title {
+	}
+
+	&__descr {
+		max-width: 300px;
+		text-wrap: balance;
+		font-size: adapt(18, 14);
+	}
+
+	&__link-text {
+	}
+}
+.monuments-card--dark {
+	color: var(--color-white);
+	.monuments-card {
+		&__image {
+			@include overlay(var(--color-black), 0.25);
+		}
+		&__link-text {
+			@extend .btn-link--light;
+		}
+	}
+}

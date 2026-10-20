@@ -15,6 +15,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 40px 20px;
+		align-items: start;
 
 		@include media($mobile) {
 			grid-template-columns: 1fr;
@@ -32,7 +33,7 @@
 
 	&__main-image {
 		display: flex;
-		height: adapt(547, 334);
+		height: adapt(569, 334);
 	}
 
 	&__swiper-thumbs {
@@ -90,5 +91,15 @@
 	}
 
 	&__price-note {
+		@include mb(20px);
+
+		@include media($mobile) {
+			@include mb(40px);
+		}
+	}
+	&__phone {
+		@include media($mobile-sm) {
+			justify-content: center;
+		}
 	}
 }

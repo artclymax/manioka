@@ -56,6 +56,27 @@ add_action('init', function () {
 });
 
 add_action('init', function () {
+	register_taxonomy('hints_cat', 'hints', [
+		'labels' => [
+			'name' => 'Категории памятников',
+			'singular_name' => 'Категория памятника',
+			'menu_name' => 'Категории',
+			'search_items' => 'Найти категорию',
+			'all_items' => 'Все категории',
+			'parent_item' => 'Родительская категория',
+			'parent_item_colon' => 'Родительская категория:',
+			'edit_item' => 'Редактировать категорию',
+			'update_item' => 'Обновить категорию',
+			'add_new_item' => 'Добавить категорию',
+			'new_item_name' => 'Новая категория',
+		],
+		'hierarchical' => true,
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_rest' => true,
+		'rewrite' => ['slug' => 'hints'],
+	]);
 	register_post_type('hints', [
 		'labels' => [
 			'name' => 'Полезные материалы',
@@ -75,11 +96,11 @@ add_action('init', function () {
 		'show_in_menu' => true,
 		'show_in_rest' => true,
 		'menu_icon' => 'dashicons-book-alt',
-		'supports' => ['title', 'editor', 'excerpt'],
+		'supports' => ['title', 'editor', 'excerpt', 'thumbnail'],
 		'rewrite' => ['slug' => 'hints'],
 		'has_archive' => 'hints',
 		'menu_position' => 10,
-
+		'taxonomies' => ['hints_cat'],
 	]);
 });
 
@@ -196,7 +217,7 @@ add_action('init', function () {
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_rest' => true,
-		'rewrite' =>['slug' => 'monuments_cat'],
+		'rewrite' => ['slug' => 'monuments_cat'],
 	]);
 
 	// CPT памятников

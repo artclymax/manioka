@@ -1,0 +1,159 @@
+@use "../tools" as *;
+
+.page-hints {
+	&__container {
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	&__nav-link {
+		@include reset-link;
+		flex-shrink: 0;
+		padding: 10px 2px;
+		max-width: 230px;
+		min-height: 60px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		border: 2px solid var(--color-accent);
+
+		font-weight: 600;
+		font-size: 16px;
+		color: var(--color-accent);
+
+		transition: all 0.3s ease-in-out;
+
+		@include media($mobile) {
+			max-width: 100%;
+			min-height: auto;
+			padding: 18px;
+		}
+
+		&.active-category {
+			background: var(--color-accent);
+			color: var(--color-white);
+		}
+
+		@include hover {
+			background: var(--color-accent);
+			color: var(--color-white);
+		}
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 0.7fr 0.7fr 1fr 1fr;
+		gap: 20px;
+
+		@include media($tablet) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__card {
+		@include media($tablet, min) {
+			&:first-child {
+				grid-column: span 2;
+				grid-row: span 2;
+			}
+			&:nth-child(6) {
+				grid-column: 1 / -1;
+			}
+		}
+	}
+
+	&__pagination {
+	}
+
+	&__pagination-inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+
+		@include media($mobile) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__pagination-prev,
+	&__pagination-next {
+		flex-shrink: 0;
+		max-width: 340px;
+		width: 100%;
+
+		@include media($mobile) {
+			max-width: 100%;
+		}
+	}
+	&__pagination-prev a,
+	&__pagination-next a {
+		@include reset-link;
+		@include text-btn-mob;
+		display: flex;
+		justify-content: center;
+		padding: 18px;
+		width: 100%;
+		border: 2px solid var(--color-accent);
+		color: var(--color-accent);
+		transition: all 0.3s ease-in-out;
+
+		@include hover {
+			background: var(--color-accent-hover);
+			color: var(--color-light);
+		}
+	}
+
+	&__empty {
+	}
+}
+.hints-card--featured {
+}
+.hints-card {
+	@include flex-column;
+	gap: 10px;
+	@include media($tablet, min) {
+		&:first-child {
+			.hints-card__image {
+				height: adapt(840, 253, $mobile, $tablet);
+			}
+		}
+		&:nth-child(6) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			.hints-card__image {
+				order: 2;
+			}
+		}
+	}
+	&__image {
+		height: 253px;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+	}
+
+	&__content {
+		@include flex-column;
+		gap: adapt(20, 10);
+		flex-grow: 1;
+	}
+
+	&__title {
+	}
+
+	&__descr {
+		text-wrap: balance;
+	}
+
+	&__link-text {
+	}
+}

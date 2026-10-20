@@ -1,8 +1,8 @@
 <?php
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
-		'page_title' => 'Секции услуг',
-		'menu_title' => 'Секции услуг',
+		'page_title' => 'Общие секции услуг',
+		'menu_title' => 'Общие секции услуг',
 		'menu_slug' => 'opt-single-service',
 		'position' => 20,
 	));

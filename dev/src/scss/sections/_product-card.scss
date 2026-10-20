@@ -39,11 +39,14 @@
 	}
 
 	&__attributes {
+		@include reset;
+
 		@include flex-column;
-		gap: 20px;
+		gap: adapt(20, 10);
 	}
 
 	&__attribute {
+		@include reset;
 		display: grid;
 		grid-template-columns: 100px 1fr;
 		gap: 20px;

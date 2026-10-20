@@ -1,0 +1,42 @@
+@use "../tools" as *;
+
+.monuments-kit {
+	&__container {
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 20px;
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__list {
+		@include reset-list;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+		padding-bottom: adapt(20, 10);
+		border-bottom: 1px solid var(--color-accent-decor);
+		font-size: adapt(18, 14);
+	}
+
+	&__link {
+		@include reset-link;
+		transition: all 0.3s ease-in-out;
+		@include hover {
+			color: var(--color-accent);
+		}
+	}
+
+	&__text {
+	}
+}
