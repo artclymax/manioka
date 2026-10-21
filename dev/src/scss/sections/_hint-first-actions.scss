@@ -1,0 +1,130 @@
+@use "../tools" as *;
+
+.hints-first-actions {
+	padding-top: var(--section-padding);
+	&__container {
+	}
+	.section-header {
+		max-width: 690px;
+	}
+	&__nav {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 10px;
+	}
+
+	&__nav-link {
+		@include reset-btn;
+		padding: 20px 2px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		border: 2px solid var(--color-accent);
+
+		font-weight: 600;
+		font-size: 16px;
+		color: var(--color-accent);
+
+		transition: all 0.3s ease-in-out;
+
+		@include media($mobile) {
+			max-width: 100%;
+			min-height: auto;
+			padding: 18px;
+		}
+
+		&.active-tab {
+			background: var(--color-accent);
+			color: var(--color-white);
+		}
+
+		@include hover {
+			background: var(--color-accent);
+			color: var(--color-white);
+		}
+	}
+
+	&__content {
+	}
+
+	&__tab {
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px 20px;
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__steps {
+		@include flex-column;
+		gap: adapt(86, 20, $mobile);
+	}
+
+	&__step {
+	}
+
+	&__emergency {
+		background: var(--color-accent-section);
+		color: var(--color-light);
+		padding: adapt(20, 10) adapt(12, 10);
+		@include flex-column;
+	}
+
+	&__emergency-label {
+		color: var(--color-accent-decor);
+		padding-bottom: adapt(40, 20);
+		border-bottom: 1px solid var(--color-accent-decor);
+		@include mb(adapt(40, 20));
+	}
+
+	&__emergency-title {
+		@include mb(adapt(20, 10));
+	}
+
+	&__emergency-descr {
+		@include mb(adapt(40, 20));
+	}
+	&__emergency-phone-label {
+		color: var(--color-accent-decor);
+		@include mb(40px);
+	}
+	&__emergency-phone {
+		margin-top: auto;
+	}
+
+	&__emergency-phone-link {
+		font-size: adapt(72, 42);
+		@include hover-link(var(--color-light));
+	}
+
+	&__emergency-phone-meta {
+		@include text-body-s;
+		display: flex;
+		gap: 10px;
+		align-items: center;
+	}
+
+	&__emergency-badge {
+		padding: 2px 4px;
+		border: 1px solid var(--color-light);
+	}
+}
+.hints-step {
+	&__number {
+	}
+
+	&__content {
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+}

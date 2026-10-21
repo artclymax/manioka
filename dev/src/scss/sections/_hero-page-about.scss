@@ -1,0 +1,55 @@
+@use "../tools" as *;
+
+.hero-page-about {
+	padding-top: adapt(80, 20);
+	@include flex-column;
+	gap: adapt(40, 20);
+
+	&__container {
+		@include flex-column;
+		gap: adapt(40, 20);
+	}
+
+	&__breadcrumbs {
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: flex-end;
+		gap: 40px;
+
+		@include media($tablet) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__header {
+		flex: 0 0 75%;
+		@include flex-column;
+		gap: adapt(40, 20);
+		@include media($tablet) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__label {
+		flex: 1;
+		color: var(--color-accent-decor);
+		@include media($tablet) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__title {
+		text-wrap: balance;
+	}
+
+	&__image {
+		height: 200px;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+
+		@include media($mobile) {
+			height: 253px;
+		}
+	}
+}

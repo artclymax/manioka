@@ -2,7 +2,7 @@
 
 .contacts-faq {
 	padding-bottom: var(--section-padding);
-	
+
 	&__container {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -64,6 +64,11 @@
 		}
 		@include media($mobile) {
 			@include title-4;
+		}
+	}
+	&__socials {
+		@include media($mobile) {
+			justify-content: center;
 		}
 	}
 

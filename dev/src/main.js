@@ -25,7 +25,7 @@ import { Spoiler } from "./js/Spoiler.js";
 import { ScrollToTop } from "./js/ScrollToTop.js";
 import { MXSwiper } from "./js/MXSwiper.js";
 //import { CustomSelect } from "./js/CustomSelect.js";
-//import { Tabs } from './js/Tabs.js';
+import { Tabs } from './js/Tabs.js';
 //import { MapScrollLock } from './js/MapScrollLock.js';
 //import { cf7CustomValidation } from './js/cf7-validation.js';
 //import { SelectFromAcf } from './js/SelectFromAcf.js';
@@ -107,7 +107,6 @@ new Spoiler();
 
 new MXSwiper();
 
-//new Tabs();
 
 //new CustomSelect({
 //	selector: "select",
@@ -131,7 +130,7 @@ window.addEventListener('scroll', function () {
 
 fileBtn(); //
 
-//new Tabs();
+new Tabs();
 
 //document.querySelectorAll('video.wp-video-shortcode').forEach(video => {
 //	if (!video.src) {

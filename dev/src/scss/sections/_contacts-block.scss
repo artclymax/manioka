@@ -66,9 +66,13 @@
 			@include title-4;
 		}
 	}
-
+	&__socials {
+		@include media($mobile) {
+			justify-content: center;
+		}
+	}
 	&__map {
-		height: 465px;
+		height: adapt(465, 253);
 		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
 		iframe {
 			width: 100%;

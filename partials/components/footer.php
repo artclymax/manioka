@@ -67,7 +67,7 @@ $phone_badge = get_field('contacts_phone_badge', 'option') ?? '24/7';
 					<div class="footer__phone">
 						<div class="footer__phone-list">
 							<?php foreach ($phones as $phone): ?>
-								<a class="footer__phone-link" href="tel:+<?php echo esc_attr(correct_phone($phone['phone'])); ?>"
+								<a class="footer__phone-link" href="tel:<?php echo esc_attr(correct_phone($phone['phone'])); ?>"
 									aria-label="Телефон: <?php echo esc_attr($phone['phone']); ?>">
 									<span class="footer__phone-value">
 										<?php echo esc_html($phone['phone']); ?>

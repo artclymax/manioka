@@ -37,18 +37,18 @@ add_action('acf/init', function () {
 				'label' => 'Кнопка',
 				'type' => 'link',
 			),
-			//array(
-			//	'key' => 'field_page_404_btn_second',
-			//	'name' => 'page_404_btn_second',
-			//	'label' => 'Кнопка вторая',
-			//	'type' => 'link',
-			//),
 			array(
-				'key' => 'field_page_404_image',
-				'name' => 'page_404_image',
-				'label' => 'Картинка',
-				'type' => 'image',
+				'key' => 'field_page_404_btn_second',
+				'name' => 'page_404_btn_second',
+				'label' => 'Кнопка вторая',
+				'type' => 'link',
 			),
+			//array(
+			//	'key' => 'field_page_404_image',
+			//	'name' => 'page_404_image',
+			//	'label' => 'Картинка',
+			//	'type' => 'image',
+			//),
 		),
 		'location' => array(
 			array(

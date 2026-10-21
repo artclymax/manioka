@@ -9,6 +9,9 @@
 	background: var(--color-light);
 	padding-block: 5px;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+	@include media($tablet, min) {
+		border: 1px solid var(--color-accent-decor);
+	}
 
 	@include media($tablet) {
 		padding-block: 10px;

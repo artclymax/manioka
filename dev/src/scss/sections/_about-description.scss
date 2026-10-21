@@ -1,0 +1,22 @@
+@use "../tools" as *;
+
+.about-description {
+	background: var(--color-border);
+	&__container {
+	}
+
+	&__content {
+		@include flex-column;
+		gap: adapt(20, 10);
+		max-width: 820px;
+	}
+
+	&__title {
+		* {
+			line-height: 1;
+		}
+	}
+
+	&__descr {
+	}
+}

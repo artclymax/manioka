@@ -1,0 +1,43 @@
+@use "../tools" as *;
+
+.hint-actions-process {
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__left {
+		max-width: 500px;
+	}
+
+	&__right {
+		@include flex-column;
+		gap: 20px;
+
+		@include media($mobile) {
+			gap: 40px;
+		}
+	}
+
+	&__step {
+	}
+}
+
+.hints-step {
+	&__number {
+	}
+
+	&__content {
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+}

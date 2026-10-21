@@ -150,6 +150,9 @@
 		flex-wrap: wrap;
 		gap: 10px;
 		align-items: center;
+		@include media($mobile) {
+			justify-content: center;
+		}
 	}
 
 	&__bottom-link {

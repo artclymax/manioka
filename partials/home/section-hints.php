@@ -93,7 +93,7 @@ $phone_badge = get_field('hints_phone_badge', 'option') ?? '24/7';
 
 					<?php if ($phone): ?>
 						<div class="hints-banner__phone icon icon--phone">
-							<a class="hints-banner__phone-link link" href="tel:+<?php echo esc_attr(correct_phone($phone)); ?>"
+							<a class="hints-banner__phone-link link" href="tel:<?php echo esc_attr(correct_phone($phone)); ?>"
 								aria-label="Телефон: <?php echo esc_attr($phone); ?>">
 								<?php echo esc_html($phone); ?>
 							</a>

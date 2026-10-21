@@ -30,7 +30,7 @@ $faq_items = get_field('contacts_faq_items', $page) ?: get_field('contacts_faq_i
 								<div class="contacts-faq__phone-list">
 									<?php foreach ($phones as $phone): ?>
 										<a class="contacts-faq__phone-link"
-											href="tel:+<?php echo esc_attr(correct_phone($phone['phone'])); ?>"
+											href="tel:<?php echo esc_attr(correct_phone($phone['phone'])); ?>"
 											aria-label="Телефон: <?php echo esc_attr($phone['phone']); ?>">
 											<span class="contacts-faq__phone-value">
 												<?php echo esc_html($phone['phone']); ?>

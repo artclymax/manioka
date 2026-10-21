@@ -131,3 +131,14 @@
 	&__link-text {
 	}
 }
+
+.hero-page-simple {
+	border: none;
+	padding-top: adapt(80, 40);
+	.hero-page__container {
+		padding-inline: var(--container-padding);
+	}
+	.hero-page__content {
+		@include reset;
+	}
+}

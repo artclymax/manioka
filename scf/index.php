@@ -23,4 +23,14 @@ require_once get_template_directory() . '/scf/services/contacts-faq.php';
 require_once get_template_directory() . '/scf/product.php';
 require_once get_template_directory() . '/scf/monuments.php';
 
+require_once get_template_directory() . '/scf/hints/hero-hints-instructions.php';
+require_once get_template_directory() . '/scf/hints/hints-actions-process.php';
+require_once get_template_directory() . '/scf/hints/hints-instruction-cta.php';
+require_once get_template_directory() . '/scf/hints/hints-first-actions.php';
+require_once get_template_directory() . '/scf/hints/hints-instructions-docs.php';
+require_once get_template_directory() . '/scf/hints/hints-instruction-important-info.php';
+
+require_once get_template_directory() . '/scf/about.php';
+require_once get_template_directory() . '/scf/page-contacts.php';
+
 ?>

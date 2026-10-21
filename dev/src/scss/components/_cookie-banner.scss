@@ -9,7 +9,7 @@
 }
 .cookie-banner-container {
 	border: 2px solid var(--color-accent);
-	background: var(--color-warm-bg);
+	background: var(--color-light);
 	padding: adapt(20, 10, $mobile);
 	display: flex;
 	max-width: 852px;
@@ -26,20 +26,28 @@
 	gap: adapt(20, 10);
 }
 .cookie-banner-title {
-	font-weight: 400;
-	font-size: 16px;
+	@include text-body-l;
+
+	@include media($mobile) {
+		@include text-body-s;
+	}
 	display: flex;
 	gap: 12px;
 	align-items: center;
 	margin-bottom: 0;
+
 	&::after {
 		content: "";
 		@include square(20px);
-		@include bgimg(url("../../../public/images/icons/cookie-icon.svg"));
+		@include bgimg(url("../../../public//images/icons/cookie-icon.svg"));
 	}
 }
 .cookie-banner-description {
-	font-size: 16px;
+	@include text-body-l;
+
+	@include media($mobile) {
+		@include text-body-s;
+	}
 	& > *:last-child {
 		margin-bottom: 0;
 	}
@@ -66,7 +74,19 @@
 		max-width: 300px;
 	}
 }
+.cookie-actions {
+	@include media($mobile, min) {
+		flex: 0 1 30%;
+	}
+}
 .cookie-btn {
+	@include btn;
+	min-width: auto;
+	padding: 12px;
+	border-radius: 0;
+}
+.cookie-btn-settings {
+	@include btn-outline;
 }
 .cookie-btn-equal {
 	@include btn;
@@ -87,13 +107,11 @@
 }
 
 .cookie-modal-dialog {
-	--artcly-cc-chk-bg-active: var(--color-accent);
-	--artcly-cc-chk-bg-active: var(--color-accent);
-	--artcly-cc-close-color: var(--color-accent);
-	--artcly-cc-chk-disabled-bg: var(--color-accent);
+	--artcly-cc-toggle-bg-active: var(--color-accent);
+	--artcly-cc-toggle-disabled-bg: var(--color-accent);
 	padding: adapt(20, 10, $mobile);
 	border: 2px solid var(--color-accent);
-	background: var(--color-warm-bg);
+	background: var(--color-light);
 	border-radius: 0;
 	overflow: auto;
 }
@@ -117,5 +135,12 @@
 	opacity: 0.7;
 }
 .artcly-iframe-msg a {
-	color: var(--color-white);
+}
+.cookie-modal-actions {
+	@include media($mobile, min) {
+		flex-direction: row;
+		& > * {
+			flex: 1;
+		}
+	}
 }

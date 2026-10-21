@@ -2,6 +2,7 @@
 $class = $args['class'] ?? '';
 $label = $args['label'] ?? '';
 $title = $args['title'] ?? '';
+$title_tag = $args['title_tag'] ?? 'h2';
 $title_class = $args['title_class'] ?? 'title-1';
 $descr = $args['descr'] ?? '';
 
@@ -14,9 +15,9 @@ if (!empty($label) || !empty($title) || !empty($descr)): ?>
 		<?php endif; ?>
 
 		<?php if ($title): ?>
-			<h2 class="section-header__title <?= esc_attr($title_class) ?>">
+			<<?= esc_attr($title_tag) ?> class="section-header__title <?= esc_attr($title_class) ?>">
 				<?php echo esc_html($title); ?>
-			</h2>
+			</<?= esc_attr($title_tag) ?>>
 		<?php endif; ?>
 
 		<?php if ($descr): ?>

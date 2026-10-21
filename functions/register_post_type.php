@@ -56,51 +56,54 @@ add_action('init', function () {
 });
 
 add_action('init', function () {
+	// 1. Таксономия (даем уникальный слаг, отличный от типа записи)
 	register_taxonomy('hints_cat', 'hints', [
 		'labels' => [
-			'name' => 'Категории памятников',
-			'singular_name' => 'Категория памятника',
-			'menu_name' => 'Категории',
-			'search_items' => 'Найти категорию',
-			'all_items' => 'Все категории',
-			'parent_item' => 'Родительская категория',
+			'name'              => 'Категории материалов', // Исправил опечатку
+			'singular_name'     => 'Категория материала',
+			'menu_name'         => 'Категории',
+			'search_items'      => 'Найти категорию',
+			'all_items'         => 'Все категории',
+			'parent_item'       => 'Родительская категория',
 			'parent_item_colon' => 'Родительская категория:',
-			'edit_item' => 'Редактировать категорию',
-			'update_item' => 'Обновить категорию',
-			'add_new_item' => 'Добавить категорию',
-			'new_item_name' => 'Новая категория',
+			'edit_item'         => 'Редактировать категорию',
+			'update_item'       => 'Обновить категорию',
+			'add_new_item'      => 'Добавить категорию',
+			'new_item_name'     => 'Новая категория',
 		],
 		'hierarchical' => true,
-		'public' => true,
-		'show_ui' => true,
+		'public'       => true,
+		'show_ui'      => true,
 		'show_in_menu' => true,
 		'show_in_rest' => true,
-		'rewrite' => ['slug' => 'hints'],
+		'rewrite'      => ['slug' => 'hint-category'], // <-- ВАЖНО: другой слаг
 	]);
+
+	// 2. Тип записи
 	register_post_type('hints', [
 		'labels' => [
-			'name' => 'Полезные материалы',
-			'singular_name' => 'Материал',
-			'menu_name' => 'Полезное',
-			'add_new' => 'Добавить материал',
-			'add_new_item' => 'Добавить новый материал',
-			'edit_item' => 'Редактировать материал',
-			'new_item' => 'Новый материал',
-			'view_item' => 'Просмотреть материал',
-			'search_items' => 'Найти материалы',
-			'not_found' => 'Материалы не найдены',
+			'name'               => 'Полезные материалы',
+			'singular_name'      => 'Материал',
+			'menu_name'          => 'Полезное',
+			'add_new'            => 'Добавить материал',
+			'add_new_item'       => 'Добавить новый материал',
+			'edit_item'          => 'Редактировать материал',
+			'new_item'           => 'Новый материал',
+			'view_item'          => 'Просмотреть материал',
+			'search_items'       => 'Найти материалы',
+			'not_found'          => 'Материалы не найдены',
 			'not_found_in_trash' => 'В корзине материалов не найдено',
 		],
-		'public' => true,
-		'show_ui' => true,
+		'public'       => true,
+		'show_ui'      => true,
 		'show_in_menu' => true,
 		'show_in_rest' => true,
-		'menu_icon' => 'dashicons-book-alt',
-		'supports' => ['title', 'editor', 'excerpt', 'thumbnail'],
-		'rewrite' => ['slug' => 'hints'],
-		'has_archive' => 'hints',
-		'menu_position' => 10,
-		'taxonomies' => ['hints_cat'],
+		'menu_icon'    => 'dashicons-book-alt',
+		'supports'     => ['title', 'editor', 'excerpt', 'thumbnail'],
+		'rewrite'      => ['slug' => 'hints'], // <-- Слаг типа записи (остается hints)
+		'has_archive'  => 'hints',
+		'menu_position'=> 10,
+		'taxonomies'   => ['hints_cat'],
 	]);
 });
 

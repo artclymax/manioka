@@ -67,3 +67,25 @@
 		@include text-phone-label-mob;
 	}
 }
+
+.section-content {
+	h1 {
+		@extend .title-1;
+	}
+	h2 {
+		@extend .title-2;
+	}
+	h3 {
+		@extend .title-3;
+	}
+	h3 {
+		@extend .title-4;
+	}
+	
+}
+
+.section-descr-width {
+	p {
+		max-width: 800px;
+	}
+}

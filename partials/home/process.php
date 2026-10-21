@@ -65,7 +65,7 @@ $steps = get_field('process_steps', $page) ?? [];
 								<?php echo esc_html($phone_label); ?> •
 							</span>
 							<span class="process-left__phone-value">
-								<a href="tel:+<?php echo esc_attr(correct_phone($phone)); ?>" class="link">
+								<a href="tel:<?php echo esc_attr(correct_phone($phone)); ?>" class="link">
 									<?php echo esc_html($phone); ?>
 								</a>
 							</span>

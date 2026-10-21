@@ -1,0 +1,42 @@
+@use "../tools" as *;
+
+.hero-hints {
+	padding-bottom: unset;
+	&__container {
+		@include flex-column;
+		gap: adapt(40, 20);
+	}
+
+	&__breadcrumbs {
+	}
+
+	&__content {
+		@include flex-column;
+		max-width: 820px;
+	}
+
+	&__categories {
+		@include mb(adapt(40, 20));
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+
+	&__category {
+		@include hover-link(var(--color-accent)) {
+			color: var(--color-accent-decor);
+		}
+	}
+
+	&__title {
+		@include mb(20px);
+	}
+
+	&__descr {
+		max-width: 720px;
+	}
+
+	&__image {
+		height: adapt(460, 253);
+	}
+}

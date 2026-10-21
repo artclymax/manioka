@@ -21,3 +21,40 @@
 		@include mb(adapt(20, 10));
 	}
 }
+
+.grid-list {
+	@include reset-list;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	@include counter();
+	border: 10px solid var(--color-accent-section);
+	@include media($mobile) {
+		grid-template-columns: 1fr;
+		border: 5px solid var(--color-accent-section);
+	}
+	li {
+		@include flex-column;
+		gap: 10px;
+		@include title-3;
+		border: 1px solid var(--color-accent-decor);
+		padding: 20px;
+
+		@include media($mobile) {
+			border: 5px solid var(--color-accent-section);
+			flex-direction: row;
+			align-items: center;
+			@include title-4-mob;
+			padding: 10px;
+		}
+
+		&::before {
+			@include text-number;
+			color: var(--color-accent);
+
+			@include media($mobile) {
+				@include title-3-mob;
+				flex: 0 0 40px;
+			}
+		}
+	}
+}

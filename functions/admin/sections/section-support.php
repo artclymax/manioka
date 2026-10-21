@@ -126,7 +126,7 @@ function render_section_support()
 				</p>
 				<p>
 					<strong>Телефон:</strong>
-					<a href="tel:+375292389851" class="phone">+375 (29) 238-98-51</a>
+					<a href="tel:375292389851" class="phone">+375 (29) 238-98-51</a>
 				</p>
 
 				<div class="verda-socials">

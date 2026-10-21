@@ -161,7 +161,7 @@ $phone_badge = get_field('contacts_phone_badge', 'option') ?? '24/7';
 							<div class="contacts-block__phone-list">
 								<?php foreach ($phones as $phone): ?>
 									<a class="contacts-block__phone-link"
-										href="tel:+<?php echo esc_attr(correct_phone($phone['phone'])); ?>"
+										href="tel:<?php echo esc_attr(correct_phone($phone['phone'])); ?>"
 										aria-label="Телефон: <?php echo esc_attr($phone['phone']); ?>">
 										<span class="contacts-block__phone-value">
 											<?php echo esc_html($phone['phone']); ?>

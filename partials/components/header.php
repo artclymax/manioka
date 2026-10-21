@@ -35,7 +35,7 @@ $cities = get_field('header_cities', 'option') ?? [];
 					<?php if ($phone): ?>
 					<div class="header-menu__phone header-phone hidden-tablet">
 						<a class="header-phone__number icon icon--phone"
-							href="tel:+<?php echo esc_attr(correct_phone($phone)); ?>"
+							href="tel:<?php echo esc_attr(correct_phone($phone)); ?>"
 							aria-label="Телефон: <?php echo esc_attr($phone); ?>">
 							<span class="header-phone__value link">
 									<?php echo esc_html($phone); ?>
@@ -88,7 +88,7 @@ $cities = get_field('header_cities', 'option') ?? [];
 		</nav>
 
 		<?php if ($phone): ?>
-			<a class="header__phone visible-tablet" href="tel:+<?php echo esc_attr(correct_phone($phone)); ?>"
+			<a class="header__phone visible-tablet" href="tel:<?php echo esc_attr(correct_phone($phone)); ?>"
 				aria-label="Телефон: <?php echo esc_attr($phone); ?>">
 				<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
 					aria-hidden="true">

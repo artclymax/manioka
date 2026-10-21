@@ -32,8 +32,8 @@
 //@use "components/_running-line.scss";
 //@use "components/_scroll-to-top.scss";
 //@use "components/_modal.scss";
-//@use "components/_tabs.scss";
-//@use "components/_cookie-banner.scss";
+@use "components/_tabs.scss";
+@use "components/_cookie-banner.scss";
 //@use "components/_cookie-banner-2.scss";
 //@use "components/_cookie-banner-3.scss";
 @use "components/_navxt_breadcrumbs.scss";
@@ -66,6 +66,7 @@
 @use "sections/_footer.scss";
 @use "sections/_hero-page.scss";
 //@use "sections/_hero-404.scss";
+@use "sections/_hero-page-404.scss";
 
 // home
 @use "sections/_home-hero.scss";
@@ -100,6 +101,17 @@
 
 // hints
 @use "sections/_page-hints.scss";
+@use "sections/_hero-hints.scss";
+@use "sections/_hero-hints-instructions.scss";
+@use "sections/_hint-actions-process.scss";
+@use "sections/_hint-instruction-cta.scss";
+@use "sections/_hint-first-actions.scss";
+@use "sections/_hint-instructions-docs.scss";
+
+// about
+@use "sections/_hero-page-about.scss";
+@use "sections/_about-description.scss";
+@use "sections/_page-contacts.scss";
 
 
 #wpadminbar {
