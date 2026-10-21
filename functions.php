@@ -1,7 +1,7 @@
 <?php
 
 // vite
-require_once get_template_directory() . '/functions/vite.php';
+//require_once get_template_directory() . '/functions/vite.php';
 
 // === Helpers ===
 require_once get_template_directory() . '/functions/helpers/theme_asset_version.php';
